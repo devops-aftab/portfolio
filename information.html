@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<!--
+  Page 2: Information (projects and services)
+  CSS method used on this page: EMBEDDED CSS only (one <style> element in the <head>).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projects and services by Aftab Ahmad: Terraform, AWS ECS, Linux system administration, lab setup and laptop repair.">
+  <title>Projects &amp; Services | Aftab Ahmad</title>
+
+  <!-- ===== Embedded stylesheet for this page ===== -->
+  <style>
+    /* ---------- Page base ---------- */
+
+    /* Element selector: base colours and typography for the whole page */
+    body {
+      margin: 0;
+      background-color: #f6f4ef;
+      color: #1e2b2f;
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* Element selector: section and article headings use a serif face */
+    h2,
+    h3 {
+      font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+      font-weight: normal;
+      color: #1e2b2f;
+      line-height: 1.25;
+    }
+
+    /* Element selector: links */
+    a {
+      color: #2e6b5f;
+    }
+
+    a:hover {
+      color: #1b453d;
+    }
+
+    /* Class selector: centred page width shared by header, main and footer */
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- Site header and navigation ---------- */
+
+    /* Class selector: white header bar with a thin bottom border */
+    .site-header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #dce1da;
+    }
+
+    .site-header .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 32px;
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    .site-title {
+      margin: 0;
+      font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+      font-size: 26px;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+
+    .site-title span {
+      display: block;
+      margin-top: 2px;
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: #56656a;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #3d4d52;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #eef2ee;
+      color: #1e2b2f;
+    }
+
+    /* Attribute selector: highlights the link for the page you are on */
+    nav a[aria-current="page"] {
+      background-color: #e6efea;
+      color: #24564c;
+      font-weight: 600;
+    }
+
+    /* ---------- Page introduction ---------- */
+
+    .page-intro {
+      padding: 56px 0 32px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-family: Consolas, Menlo, "Courier New", monospace;
+      font-size: 14px;
+      color: #2e6b5f;
+    }
+
+    .page-intro h2 {
+      margin: 0 0 12px;
+      font-size: clamp(30px, 5vw, 40px);
+    }
+
+    .page-intro p {
+      margin: 0;
+      max-width: 620px;
+      color: #3d4d52;
+    }
+
+    /* ---------- Featured project: article + aside ---------- */
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 32px;
+      align-items: start;
+      padding-bottom: 56px;
+      border-bottom: 1px solid #dce1da;
+    }
+
+    /* ID selector: the featured project article gets a white card with a sage top border */
+    #featured-project {
+      background-color: #ffffff;
+      border: 1px solid #dce1da;
+      border-top: 4px solid #2e6b5f;
+      border-radius: 10px;
+      padding: 32px;
+    }
+
+    article h3 {
+      margin: 0 0 6px;
+      font-size: 30px;
+    }
+
+    article h4 {
+      margin: 28px 0 10px;
+      font-size: 17px;
+      font-weight: 600;
+      color: #1e2b2f;
+    }
+
+    article p {
+      color: #3d4d52;
+    }
+
+    article ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #3d4d52;
+    }
+
+    article li {
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      margin: 0 0 20px;
+      font-size: 15px;
+      color: #56656a;
+    }
+
+    /* Code sample inside the article */
+    pre {
+      margin: 0;
+      padding: 16px 18px;
+      overflow-x: auto;
+      background-color: #f3f6f3;
+      border: 1px solid #dce1da;
+      border-radius: 8px;
+      font-family: Consolas, Menlo, "Courier New", monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #24343a;
+    }
+
+    figure {
+      margin: 0 0 20px;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #56656a;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #dce1da;
+      background-color: #fbfaf7;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    /* Class selector: small rounded labels for technologies */
+    .tag {
+      display: inline-block;
+      margin: 0 6px 6px 0;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background-color: #e6efea;
+      color: #24564c;
+      font-size: 14px;
+    }
+
+    .article-footer {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e6e9e4;
+    }
+
+    /* Attribute selector: links that open in a new tab get an arrow after them */
+    a[target="_blank"]::after {
+      content: " \2197";
+      font-size: 0.85em;
+    }
+
+    /* Element selector: the aside sits next to the article as a soft-tinted panel */
+    aside {
+      background-color: #e6efea;
+      border: 1px solid #cddcd3;
+      border-radius: 10px;
+      padding: 24px;
+      font-size: 16px;
+    }
+
+    aside h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    aside p {
+      margin: 0 0 20px;
+      color: #33484d;
+    }
+
+    aside p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Class selector: the announcement block inside the aside */
+    .notice {
+      margin-bottom: 22px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #cddcd3;
+    }
+
+    aside code,
+    article code {
+      font-family: Consolas, Menlo, "Courier New", monospace;
+      font-size: 0.92em;
+      background-color: #ffffff;
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    pre code {
+      padding: 0;
+      background: none;
+    }
+
+    /* ---------- More projects ---------- */
+
+    .block {
+      padding: 56px 0;
+      border-bottom: 1px solid #dce1da;
+    }
+
+    .block > h3 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+
+    .block-intro {
+      margin: 0 0 28px;
+      color: #56656a;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    /* Class selector: cards for the smaller projects */
+    .project-card {
+      background-color: #ffffff;
+      border: 1px solid #dce1da;
+      border-left: 3px solid #2e6b5f;
+      border-radius: 8px;
+      padding: 20px 22px;
+    }
+
+    .project-card h4 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1e2b2f;
+    }
+
+    .project-card p {
+      margin: 0 0 14px;
+      font-size: 16px;
+      color: #3d4d52;
+    }
+
+    /* ---------- Services table ---------- */
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    /* Element selector: table with collapsed, visible borders */
+    table {
+      width: 100%;
+      min-width: 640px;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      border: 1px solid #c9d3cc;
+      font-size: 16px;
+    }
+
+    caption {
+      caption-side: top;
+      text-align: left;
+      padding-bottom: 12px;
+      font-size: 15px;
+      color: #56656a;
+    }
+
+    th,
+    td {
+      border: 1px solid #c9d3cc;
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    /* Header cells: distinct sage background */
+    thead th {
+      background-color: #2e6b5f;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f5f8f5;
+    }
+
+    /* Attribute selector: the first cell in each row is a row header */
+    th[scope="row"] {
+      font-weight: 600;
+      color: #24564c;
+    }
+
+    /* ---------- Footer ---------- */
+
+    .site-footer {
+      background-color: #eaefeb;
+      border-top: 1px solid #dce1da;
+      color: #56656a;
+      font-size: 15px;
+    }
+
+    .site-footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px 24px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    .site-footer p,
+    .site-footer address {
+      margin: 0;
+      font-style: normal;
+    }
+
+    /* ---------- Smaller screens ---------- */
+    @media (max-width: 860px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      #featured-project {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Site header: website title and main navigation ===== -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Aftab Ahmad <span>Cloud &amp; DevOps Portfolio</span></h1>
+
+      <!-- Navigation links to all three pages -->
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="information.html" aria-current="page">Projects &amp; Services</a></li>
+          <li><a href="registration.html">Project Inquiry</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main content ===== -->
+  <main class="container">
+
+    <!-- Page introduction -->
+    <div class="page-intro">
+      <p class="eyebrow">Projects &amp; services</p>
+      <h2>What I've built, and what I can help with</h2>
+      <p>A closer look at my main Terraform project, a few smaller ones, and the services I offer to classmates, small businesses and anyone who needs a hand with their machines or their cloud setup.</p>
+    </div>
+
+    <!-- Featured project (article) with related information (aside) -->
+    <div class="layout">
+
+      <!-- Article: a self-contained description of one project -->
+      <article id="featured-project">
+        <p class="eyebrow">Featured project</p>
+        <h3>My Terraform Journey</h3>
+        <p class="meta">Terraform &middot; HCL &middot; AWS &middot; <a href="https://github.com/devops-aftab/my-terraform-journey" target="_blank" rel="noopener">github.com/devops-aftab/my-terraform-journey</a></p>
+
+        <p>My Terraform Journey is the repository where I keep everything I learn about infrastructure as code. Instead of clicking resources together in the AWS console, each piece of infrastructure is written in HashiCorp Configuration Language (HCL) and kept in Git, so it can be reviewed, repeated and rebuilt from scratch.</p>
+        <p>Most of the code is organised into reusable modules. A module describes something like a network once, and each environment calls it with its own variables. That keeps development and production consistent without copying code between folders. A large part of the repo is also notes on state management: what the state file is, why it should never be edited by hand, and how remote state lets more than one person work on the same infrastructure safely.</p>
+
+        <h4>What's inside</h4>
+        <ul>
+          <li>Reusable modules for networking, security groups and compute</li>
+          <li>Separate configurations per environment, driven by variables</li>
+          <li>Input variables, outputs and example <code>.tfvars</code> files</li>
+          <li>Notes on local and remote state, locking and drift</li>
+        </ul>
+
+        <h4>How an environment calls a module</h4>
+        <figure>
+          <pre><code>module "network" {
+  source = "../../modules/network"
+
+  environment  = "dev"
+  cidr_block   = "10.0.0.0/16"
+  public_count = 2
+}</code></pre>
+          <figcaption>Changing these few variables is all it takes to create a second, identical network for another environment.</figcaption>
+        </figure>
+
+        <h4>Watch and listen</h4>
+        <!-- Video clip with playback controls and fallback text -->
+        <figure>
+          <video controls preload="metadata" width="640" height="360" poster="media/terraform-demo-poster.jpg">
+            <source src="media/terraform-demo.mp4" type="video/mp4">
+            <source src="media/terraform-demo.webm" type="video/webm">
+            <p>Your browser does not support HTML video. You can <a href="media/terraform-demo.mp4">download the terminal walkthrough (MP4)</a> instead.</p>
+          </video>
+          <figcaption>Video: a terminal walkthrough of <code>terraform init</code>, <code>validate</code>, <code>plan</code> and <code>apply</code> for a small VPC.</figcaption>
+        </figure>
+
+        <!-- Audio clip with playback controls and fallback text -->
+        <figure>
+          <audio controls preload="metadata">
+            <source src="media/project-summary.mp3" type="audio/mpeg">
+            Your browser does not support the audio element. You can <a href="media/project-summary.mp3">download the audio summary (MP3)</a> instead.
+          </audio>
+          <figcaption>Audio: a short spoken summary of the project.</figcaption>
+        </figure>
+
+        <footer class="article-footer">
+          <span class="tag">Terraform</span>
+          <span class="tag">HCL</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Infrastructure as Code</span>
+        </footer>
+      </article>
+
+      <!-- Aside: related information next to the article -->
+      <aside aria-label="Announcement and tip">
+        <div class="notice">
+          <h3>Announcement</h3>
+          <p>I'm open to Cloud / DevOps internships and small freelance jobs. The quickest way to reach me is the <a href="registration.html">project inquiry form</a>.</p>
+        </div>
+        <h3>Terraform tip</h3>
+        <p>Save your plan with <code>terraform plan -out=tfplan</code> and then apply that file. What gets created is exactly what you reviewed, even if the code changes in between.</p>
+        <p>Run <code>terraform fmt</code> and <code>terraform validate</code> before every commit. They catch most small mistakes in seconds.</p>
+      </aside>
+    </div>
+
+    <!-- More projects -->
+    <section class="block" aria-labelledby="more-projects-title">
+      <h3 id="more-projects-title">More projects</h3>
+      <p class="block-intro">Smaller pieces of work, from container deployments to hands-on lab setups.</p>
+      <div class="project-grid">
+        <article class="project-card">
+          <h4>AWS ECS Deployment Strategies</h4>
+          <p>Architecture notes and configuration blueprints for running containerised apps on Amazon ECS, set up through the AWS console with Docker images and CI/CD workflows that ship new versions automatically.</p>
+          <span class="tag">Amazon ECS</span>
+          <span class="tag">Docker</span>
+          <span class="tag">CI/CD</span>
+          <p><a href="https://github.com/devops-aftab/aws-ecs-deployment-strategies" target="_blank" rel="noopener">View repository</a></p>
+        </article>
+        <article class="project-card">
+          <h4>System Administration &amp; Data Logging Labs</h4>
+          <p>Configured custom FTP and DNS servers and prepared OS pre-installations, with every step written down so a machine can be set up again quickly.</p>
+          <span class="tag">Linux</span>
+          <span class="tag">DNS</span>
+          <span class="tag">FTP</span>
+        </article>
+        <article class="project-card">
+          <h4>University Lab Restoration</h4>
+          <p>With my friend Yahya, brought two computer labs at Lahore Garrison University back into service: more than 80 machines repaired, reinstalled and reconnected.</p>
+          <span class="tag">Hardware</span>
+          <span class="tag">Networking</span>
+          <span class="tag">OS deployment</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Services table -->
+    <section class="block" aria-labelledby="services-title">
+      <h3 id="services-title">Services</h3>
+      <p class="block-intro">Work I take on, with what you get and how long it usually takes.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>Services offered by Aftab Ahmad, with deliverables and typical turnaround</caption>
+          <thead>
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">What's included</th>
+              <th scope="col">You receive</th>
+              <th scope="col">Typical turnaround</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Laptop &amp; PC repair</th>
+              <td>Fault diagnosis, OS reinstall, drivers, RAM and SSD upgrades, cleaning</td>
+              <td>A working machine and a short note on what was fixed</td>
+              <td>1&ndash;2 days</td>
+            </tr>
+            <tr>
+              <th scope="row">Lab &amp; network setup</th>
+              <td>OS installation across machines, IP planning, DNS and FTP servers</td>
+              <td>A configured lab and written setup notes</td>
+              <td>Depends on lab size</td>
+            </tr>
+            <tr>
+              <th scope="row">AWS setup with Terraform</th>
+              <td>VPC, subnets, security groups and an EC2 or ECS service, written as code</td>
+              <td>A GitHub repository with modules and a README</td>
+              <td>3&ndash;5 days</td>
+            </tr>
+            <tr>
+              <th scope="row">CI/CD with GitHub Actions</th>
+              <td>A workflow that checks, builds and deploys your project on every push</td>
+              <td>Workflow files and a short walkthrough</td>
+              <td>1&ndash;3 days</td>
+            </tr>
+            <tr>
+              <th scope="row">Technical writing</th>
+              <td>READMEs, setup guides, tutorials and blog articles</td>
+              <td>Edited, ready-to-publish text</td>
+              <td>1&ndash;2 days per piece</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer: copyright and contact information ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Aftab Ahmad &middot; Fa24/BSCS/259</p>
+      <address>GitHub: <a href="https://github.com/devops-aftab">github.com/devops-aftab</a></address>
+    </div>
+  </footer>
+
+</body>
+</html>

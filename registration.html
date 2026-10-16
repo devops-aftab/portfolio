@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--
+  Page 3: Form (project inquiry with client account creation)
+  CSS method used on this page: EXTERNAL CSS only (linked file style.css).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Send Aftab Ahmad a project inquiry for laptop repair, lab setup, AWS, Terraform, CI/CD or technical writing.">
+  <title>Project Inquiry | Aftab Ahmad</title>
+
+  <!-- External stylesheet: all styling for this page lives in style.css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Site header: website title and main navigation ===== -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Aftab Ahmad <span>Cloud &amp; DevOps Portfolio</span></h1>
+
+      <!-- Navigation links to all three pages -->
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="information.html">Projects &amp; Services</a></li>
+          <li><a href="registration.html" aria-current="page">Project Inquiry</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main content ===== -->
+  <main class="container">
+
+    <!-- Page introduction -->
+    <div class="page-intro">
+      <p class="eyebrow">Project inquiry</p>
+      <h2>Tell me about your project</h2>
+      <p>Create a client account and describe what you need, and I'll get back to you by email. Fields marked <span class="req">*</span> are required.</p>
+    </div>
+
+    <div class="form-layout">
+
+      <!-- ===== Inquiry form ===== -->
+      <form id="inquiry-form" action="registration.html" method="get">
+
+        <!-- Group 1: account creation (includes the password field) -->
+        <fieldset>
+          <legend>1. Create your client account</legend>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="full-name">Full name <span class="req">*</span></label>
+              <input type="text" id="full-name" name="full_name" placeholder="e.g. Ali Raza" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="password">Password <span class="req">*</span></label>
+              <input type="password" id="password" name="password" minlength="8" autocomplete="new-password" aria-describedby="password-hint" required>
+              <p class="hint" id="password-hint">At least 8 characters.</p>
+            </div>
+
+            <div class="field">
+              <label for="age">Age</label>
+              <input type="number" id="age" name="age" min="16" max="80" step="1" aria-describedby="age-hint">
+              <p class="hint" id="age-hint">Between 16 and 80.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Group 2: what the project is about -->
+        <fieldset>
+          <legend>2. Project details</legend>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="service">Service needed <span class="req">*</span></label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Choose a service</option>
+                <option value="laptop-repair">Laptop or PC repair</option>
+                <option value="lab-setup">Lab or network setup</option>
+                <option value="aws-terraform">AWS setup with Terraform</option>
+                <option value="cicd">CI/CD with GitHub Actions</option>
+                <option value="technical-writing">Technical writing</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="preferred-date">Preferred start date</label>
+              <input type="date" id="preferred-date" name="preferred_date">
+            </div>
+          </div>
+
+          <!-- Radio group: only one contact method can be selected -->
+          <fieldset class="choice-group">
+            <legend>Preferred way to contact you</legend>
+            <div class="choice">
+              <input type="radio" id="contact-email" name="contact_method" value="email" checked>
+              <label for="contact-email">Email</label>
+            </div>
+            <div class="choice">
+              <input type="radio" id="contact-phone" name="contact_method" value="phone">
+              <label for="contact-phone">Phone call</label>
+            </div>
+            <div class="choice">
+              <input type="radio" id="contact-whatsapp" name="contact_method" value="whatsapp">
+              <label for="contact-whatsapp">WhatsApp</label>
+            </div>
+          </fieldset>
+
+          <!-- Checkboxes: each one is independent -->
+          <fieldset class="choice-group">
+            <legend>What does the project involve? <span class="legend-note">Tick all that apply.</span></legend>
+            <div class="choice">
+              <input type="checkbox" id="involves-aws" name="involves_aws" value="yes">
+              <label for="involves-aws">Cloud hosting on AWS</label>
+            </div>
+            <div class="choice">
+              <input type="checkbox" id="involves-terraform" name="involves_terraform" value="yes">
+              <label for="involves-terraform">Infrastructure as code (Terraform)</label>
+            </div>
+            <div class="choice">
+              <input type="checkbox" id="involves-cicd" name="involves_cicd" value="yes">
+              <label for="involves-cicd">CI/CD pipeline</label>
+            </div>
+            <div class="choice">
+              <input type="checkbox" id="involves-linux" name="involves_linux" value="yes">
+              <label for="involves-linux">Linux server setup</label>
+            </div>
+            <div class="choice">
+              <input type="checkbox" id="involves-hardware" name="involves_hardware" value="yes">
+              <label for="involves-hardware">Hardware repair or upgrade</label>
+            </div>
+          </fieldset>
+        </fieldset>
+
+        <!-- Group 3: free-text details -->
+        <fieldset>
+          <legend>3. Anything else?</legend>
+          <div class="field">
+            <label for="details">Project details or questions</label>
+            <textarea id="details" name="details" rows="5" maxlength="500" placeholder="What do you need, by when, and is there anything I should know?" aria-describedby="details-hint"></textarea>
+            <p class="hint" id="details-hint">Up to 500 characters.</p>
+          </div>
+        </fieldset>
+
+        <!-- Form buttons -->
+        <div class="form-actions">
+          <button type="submit">Send inquiry</button>
+          <button type="reset">Clear form</button>
+        </div>
+
+        <!-- Confirmation message, shown by the script below after a valid submission -->
+        <p id="form-status" class="form-status" role="status" hidden>Thanks! Your inquiry passed all the checks. This site has no server, so nothing was actually sent.</p>
+      </form>
+
+      <!-- Side note about the process -->
+      <aside class="side-note" aria-label="What happens next">
+        <h3>What happens next</h3>
+        <ol>
+          <li>I read your inquiry and reply with any questions.</li>
+          <li>We agree on the scope, timeline and cost.</li>
+          <li>I get to work and keep you updated until it's done.</li>
+        </ol>
+        <p>Prefer to look around first? See my <a href="information.html">projects and services</a>.</p>
+      </aside>
+    </div>
+
+  </main>
+
+  <!-- ===== Footer: copyright and contact information ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Aftab Ahmad &middot; Fa24/BSCS/259</p>
+      <address>GitHub: <a href="https://github.com/devops-aftab">github.com/devops-aftab</a></address>
+    </div>
+  </footer>
+
+  <!--
+    Small script: this is a front-end only assignment with no server.
+    The browser runs its built-in validation (required, minlength, min/max, maxlength)
+    first; the submit event only fires when every field is valid. We then stop the
+    real submission and show a confirmation message instead.
+  -->
+  <script>
+    const form = document.getElementById("inquiry-form");
+    const statusMessage = document.getElementById("form-status");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      form.reset();
+      statusMessage.hidden = false;
+    });
+
+    form.addEventListener("reset", function () {
+      statusMessage.hidden = true;
+    });
+  </script>
+
+</body>
+</html>
